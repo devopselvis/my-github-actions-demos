@@ -1,6 +1,6 @@
-# This is a basic workflow that is manually triggered
+# I am an example of using matrixes
 
-name: Demo 2
+name: Demo 2 - Using Matrixes
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI`
 # or API.
