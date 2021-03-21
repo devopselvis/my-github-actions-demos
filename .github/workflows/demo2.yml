@@ -29,7 +29,7 @@ jobs:
           - macos-latest
           - windows-latest
 # COMMENT OUT FOR BEGINNING OF DEMO
-#        python: [2.7, 3.6, 3.8]
+        python: [2.7, 3.6, 3.8]
     runs-on: ${{ matrix.os }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -38,5 +38,4 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
-# COMMENT OUT FOR BEGINNING OF DEMO        
-#        echo "Python ver ${{ matrix.python }}"  
+        echo "Python ver ${{ matrix.python }}"  
