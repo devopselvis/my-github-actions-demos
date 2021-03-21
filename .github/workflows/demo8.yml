@@ -1,0 +1,31 @@
+name: Demo 8
+
+on:
+ watch:
+   types: [started]
+
+
+jobs:
+
+  send-a-tweet:
+    
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      
+      - name: Get current date
+        id: date
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      
+      - name: Test with environment variables
+        run: echo ${{ env.NOW }}
+      
+      - name: Send Tweet Action
+        uses: devigned/go-twitter-action@v1  
+        with:
+          message: "${{ env.NOW }} - Nothing to see here....ignore the man behind the curtain...."
+          apiKey: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          apiKeySecret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          accessToken: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          accessTokenSecret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
